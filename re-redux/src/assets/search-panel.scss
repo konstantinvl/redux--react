@@ -1,0 +1,98 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.search-wrapper {
+  margin-top: 0.5vh;
+  height: 3vh;
+  display: flex;
+  justify-content: center;
+
+  & * ~ * {
+    margin-left: 1vw;
+  }
+  & input {
+    border-radius: 1em;
+    border: 2px solid #4f0db9;
+    color: #4f0db9;
+    padding-left: 1em;
+    &:focus,
+    &:focus-visible {
+      border: 2px solid rgba($color: #4f0db9, $alpha: 1);
+      border-radius: 1em;
+      outline: none;
+    }
+  }
+  & button {
+    border: 1px solid rgba($color: #ffffff, $alpha: 0.2);
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.5)
+    );
+    font-size: 0.8em;
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1em;
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: rgba($color: gray, $alpha: 0.2) 7px 7px 7px;
+      transition: 0.5s;
+    }
+  }
+}
+.sort-wrapper {
+  height: 5vh;
+  & select {
+    border: 1px solid rgba($color: #ffffff, $alpha: 0.2);
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.5)
+    );
+    font-size: 0.8em;
+    padding: 0.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1em;
+    text-align: center;
+    &:focus,
+    &:focus-visible {
+      border: 2px solid rgba($color: #4f0db9, $alpha: 1);
+      border-radius: 1em;
+      outline: none;
+    }
+  }
+}
+.pages-wrapper {
+  display: flex;
+  & * ~ * {
+    margin-left: 1vw;
+  }
+  & .page-selector {
+    margin-top: 0.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    border: 1px gray solid;
+    border-radius: 50%;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      border: 3px #2c6d75 solid;
+      font-weight: 800;
+    }
+    &-active {
+      @extend .page-selector;
+      text-decoration: underline;
+    }
+  }
+}
